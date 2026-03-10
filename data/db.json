@@ -51,6 +51,18 @@
       "updatedAt": "2026-03-10T09:11:58.822Z",
       "deleted": true,
       "deletedAt": "2026-03-10T09:12:02.112Z"
+    },
+    {
+      "id": "8951e94c-9275-4692-b9d0-67fe3e6e7e7b",
+      "originalName": "5sg6sr6g",
+      "storedName": "0ef157b6-bd16-49fb-bf61-0d5cc26887df.png",
+      "mimeType": "image/png",
+      "size": 101728,
+      "folderId": null,
+      "type": "image",
+      "createdAt": "2026-03-10T09:53:11.478Z",
+      "updatedAt": "2026-03-10T09:53:27.049Z",
+      "deleted": false
     }
   ],
   "folders": [
