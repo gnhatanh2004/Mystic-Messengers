@@ -16,7 +16,7 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 
 // Middleware
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 // Multer configuration
 const storage = multer.diskStorage({
