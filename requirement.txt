@@ -1,0 +1,30 @@
+PROJECT REQUIREMENT
+Project Name: Personal Cloud Storage (Google Drive–like)
+Technology: JavaScript, HTML, CSS for frontend and Node.js for backend
+
+PROJECT OBJECTIVE
+Create a web application using Node.js that functions as a personal cloud storage system similar to Google Drive.
+The system must allow users to:
+Upload and store images
+Upload and store videos
+Create and edit text files
+Organize files using folders
+Store large amounts of data efficiently
+View, download, and manage uploaded files
+The UI/UX will be designed separately, but the color palette should be inspired by the game Mystic Messenger.
+
+CORE FEATURES
+File Upload
+The system must allow users to upload the following file types:
+Images (JPG, PNG, GIF, WEBP)
+Videos (MP4, WEBM, MOV)
+Other file types (optional)
+Requirements:
+Support large file uploads
+Display upload progress
+Store file metadata in the database
+Automatically generate a unique file ID
+Prevent file name conflicts
+Allow uploading multiple files at the same time
+Suggested implementation:
+Use libraries such as Multer to handle file uploads and implement streaming to avoid loading entire files into memory.

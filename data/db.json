@@ -1,0 +1,94 @@
+{
+  "files": [
+    {
+      "id": "6f131a33-1418-4148-951e-f5d67a040a87",
+      "originalName": "playhop_games_2026-03-10.xlsx",
+      "storedName": "a6c77ac9-c3b8-4444-95b4-2f1f91e5873d.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 17706,
+      "folderId": "3cadcff6-0b1b-46ec-9f2b-750c583103ea",
+      "type": "other",
+      "createdAt": "2026-03-10T08:57:57.271Z",
+      "updatedAt": "2026-03-10T08:57:57.271Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:09:05.291Z"
+    },
+    {
+      "id": "881645e0-a46c-4206-bbba-48bb98cac856",
+      "originalName": "playhop_games_2026-03-10.xlsx",
+      "storedName": "ebf75160-3592-4603-9b40-d74f15a6d0dc.xlsx",
+      "mimeType": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size": 17706,
+      "folderId": "9d9ec37b-173b-4f8f-8653-5ef784b7f95c",
+      "type": "other",
+      "createdAt": "2026-03-10T09:09:23.363Z",
+      "updatedAt": "2026-03-10T09:09:23.363Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:10:16.199Z"
+    },
+    {
+      "id": "85be4d02-6187-49c1-bc29-74bc109dbdef",
+      "originalName": "Screenshot 2026-02-25 135315.png",
+      "storedName": "b6d27bd9-3a8e-4e76-a871-22610d8587d7.png",
+      "mimeType": "image/png",
+      "size": 9536,
+      "folderId": "9d9ec37b-173b-4f8f-8653-5ef784b7f95c",
+      "type": "image",
+      "createdAt": "2026-03-10T09:09:43.572Z",
+      "updatedAt": "2026-03-10T09:09:43.572Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:10:16.199Z"
+    },
+    {
+      "id": "e17455bf-4f12-4616-b6f2-3fbc0773c710",
+      "originalName": "123",
+      "storedName": "3d177d97-2736-4240-a630-b82d97d1079a.png",
+      "mimeType": "image/png",
+      "size": 101728,
+      "folderId": null,
+      "type": "image",
+      "createdAt": "2026-03-10T09:11:53.712Z",
+      "updatedAt": "2026-03-10T09:11:58.822Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:12:02.112Z"
+    }
+  ],
+  "folders": [
+    {
+      "id": "3cadcff6-0b1b-46ec-9f2b-750c583103ea",
+      "name": "uia",
+      "parentId": null,
+      "createdAt": "2026-03-10T08:57:08.250Z",
+      "updatedAt": "2026-03-10T08:57:08.250Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:09:05.288Z"
+    },
+    {
+      "id": "e20e452b-1e4a-416a-8d99-aefd74d3eb04",
+      "name": "kboi",
+      "parentId": "3cadcff6-0b1b-46ec-9f2b-750c583103ea",
+      "createdAt": "2026-03-10T08:57:17.983Z",
+      "updatedAt": "2026-03-10T08:57:17.983Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:09:05.291Z"
+    },
+    {
+      "id": "fd537105-581b-465d-85ca-1a7a32b057f8",
+      "name": "hb",
+      "parentId": null,
+      "createdAt": "2026-03-10T09:02:33.714Z",
+      "updatedAt": "2026-03-10T09:02:33.714Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:09:07.093Z"
+    },
+    {
+      "id": "9d9ec37b-173b-4f8f-8653-5ef784b7f95c",
+      "name": "uia",
+      "parentId": null,
+      "createdAt": "2026-03-10T09:09:15.785Z",
+      "updatedAt": "2026-03-10T09:09:15.785Z",
+      "deleted": true,
+      "deletedAt": "2026-03-10T09:10:16.199Z"
+    }
+  ]
+}

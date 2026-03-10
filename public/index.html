@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mystic Messengers</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <i class="fas fa-cloud"></i>
+        <span>Mystic Messengers</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-btn active" data-view="files" onclick="navigateToRoot()">
+        <i class="fas fa-home"></i> My Files
+      </button>
+      <button class="nav-btn" data-view="search" onclick="toggleSearch()">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </nav>
+    <div class="sidebar-actions">
+      <button class="action-btn upload-btn" onclick="document.getElementById('fileInput').click()">
+        <i class="fas fa-cloud-upload-alt"></i> Upload Files
+      </button>
+      <button class="action-btn" onclick="showNewFolderModal()">
+        <i class="fas fa-folder-plus"></i> New Folder
+      </button>
+      <button class="action-btn" onclick="showNewTextFileModal()">
+        <i class="fas fa-file-alt"></i> New Text File
+      </button>
+    </div>
+    <input type="file" id="fileInput" multiple hidden onchange="handleFileUpload(event)">
+    <div class="sidebar-footer">
+      <div class="storage-info">
+        <i class="fas fa-database"></i>
+        <span></span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <div class="breadcrumb" id="breadcrumb">
+        <span class="breadcrumb-item" onclick="navigateToRoot()">
+          <i class="fas fa-home"></i> My Files
+        </span>
+      </div>
+      <div class="search-box" id="searchBox" style="display:none;">
+        <i class="fas fa-search"></i>
+        <input type="text" id="searchInput" placeholder="Search files..." oninput="handleSearch(event)">
+        <button class="search-close" onclick="toggleSearch()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="top-bar-actions">
+        <button class="view-toggle" onclick="toggleViewMode()" title="Toggle view">
+          <i class="fas fa-th-large" id="viewIcon"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Upload Progress -->
+    <div class="upload-progress-bar" id="uploadProgress" style="display:none;">
+      <div class="progress-info">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <span id="uploadStatus">Uploading...</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content-area" id="contentArea">
+      <!-- Dynamic content loaded here -->
+    </div>
+  </main>
+
+  <!-- Modals -->
+  <!-- New Folder Modal -->
+  <div class="modal-overlay" id="newFolderModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-folder-plus"></i> New Folder</h3>
+        <button class="modal-close" onclick="closeModal('newFolderModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="folderNameInput" placeholder="Folder name" class="modal-input"
+               onkeydown="if(event.key==='Enter')createFolder()">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('newFolderModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="createFolder()">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Text File Modal -->
+  <div class="modal-overlay" id="newTextFileModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-file-alt"></i> New Text File</h3>
+        <button class="modal-close" onclick="closeModal('newTextFileModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="textFileNameInput" placeholder="File name" class="modal-input"
+               onkeydown="if(event.key==='Enter')createTextFile()">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('newTextFileModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="createTextFile()">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Editor Modal -->
+  <div class="modal-overlay" id="textEditorModal">
+    <div class="modal modal-large">
+      <div class="modal-header">
+        <h3><i class="fas fa-edit"></i> <span id="editorFileName">Editor</span></h3>
+        <button class="modal-close" onclick="closeModal('textEditorModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="textEditorContent" class="text-editor" placeholder="Start typing..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('textEditorModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="saveTextFile()">
+          <i class="fas fa-save"></i> Save
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rename Modal -->
+  <div class="modal-overlay" id="renameModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3><i class="fas fa-pen"></i> Rename</h3>
+        <button class="modal-close" onclick="closeModal('renameModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="renameInput" placeholder="New name" class="modal-input"
+               onkeydown="if(event.key==='Enter')confirmRename()">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal('renameModal')">Cancel</button>
+        <button class="btn btn-primary" onclick="confirmRename()">Rename</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google Drive-style Preview Panel -->
+  <div class="preview-overlay" id="previewOverlay">
+    <div class="preview-panel">
+      <div class="preview-topbar">
+        <div class="preview-filename" id="previewFileName"></div>
+        <div class="preview-actions">
+          <button class="preview-action-btn" id="previewDownloadBtn" title="Download">
+            <i class="fas fa-download"></i>
+          </button>
+          <button class="preview-action-btn" id="previewEditBtn" title="Edit" style="display:none;">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="preview-action-btn danger" id="previewDeleteBtn" title="Delete">
+            <i class="fas fa-trash"></i>
+          </button>
+          <button class="preview-action-btn" id="previewCloseBtn" title="Close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+      <div class="preview-content" id="previewContent">
+      </div>
+      <div class="preview-nav">
+        <button class="preview-nav-btn" id="prevFileBtn" title="Previous file">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="preview-nav-btn" id="nextFileBtn" title="Next file">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Context Menu -->
+  <div class="context-menu" id="contextMenu" style="display:none;">
+    <button onclick="contextAction('preview')"><i class="fas fa-eye"></i> Preview</button>
+    <button onclick="contextAction('download')"><i class="fas fa-download"></i> Download</button>
+    <button onclick="contextAction('rename')"><i class="fas fa-pen"></i> Rename</button>
+    <hr>
+    <button onclick="contextAction('delete')" class="danger"><i class="fas fa-trash"></i> Delete</button>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
