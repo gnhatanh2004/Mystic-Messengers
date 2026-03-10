@@ -16,7 +16,10 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 
 // Middleware
 app.use(express.json());
-app.use(express.static(__dirname));
+// Serve frontend files explicitly
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/style.css', (req, res) => res.sendFile(path.join(__dirname, 'style.css')));
+app.get('/app.js', (req, res) => res.sendFile(path.join(__dirname, 'app.js')));
 
 // Multer configuration
 const storage = multer.diskStorage({
