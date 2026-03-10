@@ -1,4 +1,17 @@
 {
-  "files": [],
+  "files": [
+    {
+      "id": "fa2b7b38-2692-4264-8c59-f4dfb6376725",
+      "originalName": "111C8 t3_2026.pdf",
+      "storedName": "64d0fcb3-feee-4474-b9df-64d1132dc5e7.pdf",
+      "mimeType": "application/pdf",
+      "size": 108468,
+      "folderId": null,
+      "type": "pdf",
+      "createdAt": "2026-03-10T15:07:32.930Z",
+      "updatedAt": "2026-03-10T15:07:32.930Z",
+      "deleted": false
+    }
+  ],
   "folders": []
 }
